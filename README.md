@@ -2,8 +2,8 @@
 A powerful heuristic crawler for security engineer
 
 ## 
-看配置文件和参数说明~~~~ 
 
+```
 Usage of ./webx:
   -cookie string
         Cookie string.Format[domain;;cookie string] or [cookie string]. eg1. 163.com;; PHPSESSID=123456789  eg2. PHPSESSID=123456789
@@ -31,6 +31,7 @@ Usage of ./webx:
   -u string
         URL to crawl
   -v    Show Verbose output
+```
 
 
 
