@@ -33,5 +33,13 @@ Usage of ./webx:
   -v    Show Verbose output
 ```
 
+## update log
+
+### 2024.7.18
+- 修复域名提取bug
+- 优化了返回页面指纹和处理逻辑
+- 优化了数据量较多情况下的报告展示
+
+
 
 
