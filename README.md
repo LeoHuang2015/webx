@@ -1,6 +1,8 @@
 # webx
 A powerful heuristic crawler for security engineer
 
+支持敏感信息提取、域名提取、url提取、url风险判断、联动xray等扫描器。
+
 ## 
 
 ```
@@ -33,12 +35,6 @@ Usage of ./webx:
   -v    Show Verbose output
 ```
 
-## update log
-
-### 2024.7.18
-- 修复域名提取bug
-- 优化了返回页面指纹和处理逻辑
-- 优化了数据量较多情况下的报告展示
 
 
 
