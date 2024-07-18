@@ -1,0 +1,1485 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Webx Report —— http://testphp.vulnweb.com:80/ 爬虫报告</title>
+<h3>Webx Report —— http://testphp.vulnweb.com:80/ 爬虫报告</h3>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<style>
+  body { font-family: Arial, sans-serif; font-size: 1em;}
+   h3 { font-size: 1.3em; color: #333; margin-bottom: 2px; border-bottom: 2px solid #eee; padding-bottom: 2px; }
+
+   
+   .container {
+    display: flex;
+    justify-content: space-between;
+    }
+    .text-content {
+        flex: 1;
+        max-width: 50%; /* 限制最大宽度 */
+        overflow: auto; /* 添加滚动条 */
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .img-content {
+        flex: 1;
+        max-width: 50%; /* 限制最大宽度 */
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .img-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    <!--     
+    @media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .text-content, .img-content {
+            max-width: 100%;
+        }
+    } 
+    -->
+
+   .stats-row {  margin-bottom: 5px;  border-bottom: 1px solid #ddd; }
+   .stats-item { font-weight: bold; white-space: nowrap;  margin-right: 10px; }
+   .stats-result { color:#3c78d8;  font-weight: bold;  flex-grow: 1;}
+   .stats-result-alert { color:#e74c3c;;  font-weight: bold;  flex-grow: 1;}
+
+
+  .highlight { color: #e74c3c; }
+
+
+  table.dataTable { width: 100%; margin-top: 10px !important; }
+
+  
+
+</style>
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    $('.dataTable').DataTable({
+        "searching": true, // 启用搜索框
+        "paging": false, // 禁用分页，根据需要可以开启
+        "info": false, // 禁用信息显示，根据需要可以开启
+        "order": [[6, 'desc']]    // 根据风险等级排序
+    });
+});
+
+
+
+</script>
+</head>
+
+<body>
+<div class="container">
+    <div class="text-content">
+        <h3>任务信息</h3>
+
+        
+        <div class="stats-row">
+            <span class="stats-item">爬虫URL:</span>
+            <span class="stats-result"> <a target=_blank href="http://testphp.vulnweb.com:80/">http://testphp.vulnweb.com:80/</a></b>  &nbsp;&nbsp;&nbsp;&nbsp; []   </span> 
+        </div>
+
+        <!-- URL数量(Request|Response) -->
+        <div class="stats-row">
+            <span class="stats-item">URL数量[Request|Response]:</span>
+            <span class="stats-result">1977 | 
+            66</span> 
+        </div>
+        
+        <!-- 域名数(同域|外域) -->
+        <div class="stats-row">
+            <span class="stats-item">域名数[同域（子域）|外域]:</span>
+            <span class="stats-result">7 [ 1 (0)  |  6   ] </span>
+        </div>
+        
+        
+        <!-- 并发和状态 -->
+        <div class="stats-row">
+            <span class="stats-item">并发:</span>
+            <span class="stats-result">2 [TaskDone]</span> 
+        </div>
+        
+        <!-- 扫描时间 -->
+        <div class="stats-row">
+            <span class="stats-item">扫描时间:</span>
+            <span class="stats-result">  9m9s   [ 2024-07-18 18:00:20 - 2024-07-18 18:09:29 ]   </span>
+        </div>
+        
+        <!-- 站点特征 -->
+        <div class="stats-row">
+            <span class="stats-item">站点特征:</span>
+            <span class="stats-result">
+            
+                DreamWeaver
+                {} |
+                Nginx:1.19.0
+                {} |
+                PHP:5.6.40
+                {} |
+                Ubuntu
+                {} |
+            </span>
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item">JS算法信息[0] ：</span>
+            
+            
+            
+        </div>
+        
+
+        
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">手机号码[0]</span>
+            
+        </div>
+        
+
+        
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">身份证信息[0]</span>
+            
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">邮箱地址[1]</span>
+            
+                <button onclick="toggleShowMore('email-list')" class="toggle-btn">展开</button>
+            
+                <span class="email-list one" id="email-list-one">
+                     
+                    
+                        
+                            
+                            <span class="stats-result">  wvs@acunetix.com ... </span>  
+                        
+                    
+                </span>
+
+                <div class="email-list all" id="email-list-all" style="display:none;">
+                    
+                    <span class="stats-result-alert">   wvs@acunetix.com  </span>  
+                     
+                    
+                    
+                        
+                            
+                                <li> <a target="_blank" href="http://testphp.vulnweb.com/artists.php">http://testphp.vulnweb.com/artists.php </a>   </li> 
+                                
+                                     
+                            
+                        
+                            
+                                <li> <a target="_blank" href="http://testphp.vulnweb.com/cart.php">http://testphp.vulnweb.com/cart.php </a>   </li> 
+                                
+                                     
+                            
+                        
+                            
+                                <li>...</li>
+                                
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                                     
+                            
+                        
+                
+                </div>
+            
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">JWT秘钥信息[0]</span> 
+            
+        </div>
+
+
+        
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">Secret秘钥信息[0]</span>
+            
+        </div>
+
+
+        
+
+
+        <div class="stats-row ip-address">
+            <span class="stats-item">IP地址[0]</span> 
+            
+        </div>
+
+
+        <div class="stats-row sub-domain">
+            <span class="stats-item">子域域名[0]:</span>
+            
+        </div>
+        
+
+       
+        <div class="stats-row same-domain">
+            <span class="stats-item">同域域名[1]</span>
+            
+                <button onclick="toggleShowMore('same-domain-list')" class="toggle-btn">展开</button>
+                
+                <span class="same-domain-list one" id="same-domain-list-one">
+                     
+                    
+                        
+                            
+                            <span class="stats-result">  testphp.vulnweb.com ... </span>  
+                        
+                    
+                </span>
+                </span>
+                <div class="same-domain-list all" id="same-domain-list-all" style="display:none;">
+                    
+                    testphp.vulnweb.com,
+                    
+                </div>
+            
+        </div>
+        
+
+        
+        <div class="stats-row other-domain">
+            <span class="stats-item">外域域名[6]</span>
+            
+                <button onclick="toggleShowMore('other-domain-list')" class="toggle-btn">展开</button>
+                
+                <span class="other-domain-list one" id="other-domain-list-one">
+                     
+                    
+                        
+                            
+                            <span class="stats-result">  www.acunetix.com ... </span>  
+                        
+                    
+                        
+                            
+                </span>
+                <div class="other-domain-list all" id="other-domain-list-all" style="display:none;">
+                    
+                    www.acunetix.com,
+                    
+                    www.eclectasy.com,
+                    
+                    download.macromedia.com,
+                    
+                    www.macromedia.com,
+                    
+                    www.w3.org,
+                    
+                    blog.mindedsecurity.com,
+                    
+                </div>
+            
+        </div>
+       
+
+
+    </div>
+
+
+    <div class="img-content">
+    <img src="img/testphp.vulnweb.com_80_2024-07-18.png"  alt="截图信息" class="screenshot">
+    </div>
+
+</div>
+
+
+
+<style>
+    .list.one {
+        display: block;
+        transition: opacity 0.3s ease-out;
+    }
+    .list.one.hidden {
+        opacity: 0;
+    }
+    .list.all {
+        display: none;
+    }
+    .toggle-btn, .copy-btn {
+        cursor: pointer;
+        padding: 5px 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+    }
+</style>
+
+<script>
+
+function toggleShowMore(listId) {
+    var oneElement = document.getElementById(listId + '-one');
+    var allElement = document.getElementById(listId + '-all');
+    var toggleBtn = document.querySelector('button[onclick*="' + listId + '"].toggle-btn');
+    
+    // Toggle the visibility of the one and all elements
+    if (allElement.style.display === 'none') {
+        oneElement.classList.add('hidden');
+        allElement.style.display = 'block';
+        toggleBtn.textContent = '收起';
+    } else {
+        oneElement.classList.remove('hidden');
+        allElement.style.display = 'none';
+        toggleBtn.textContent = '展开';
+    }
+}
+
+</script>
+
+
+
+
+<style>
+.risk0 { color: #000000; } /* 黑色 */
+.risk1 { color: #3498db; } /* 蓝色 */
+.risk2 { color: #e67e22; } /* 橙色 */
+.risk3 { color: #e74c3c; } /* 红色，不要太鲜艳 */
+</style>
+
+
+<div class="box1">
+    <h3>详细请求信息 URL [66] </h3>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>CType</th>
+                <th>RType</th>
+                <th>Length</th>
+                <th>Fingerprint</th>
+                <th>Title</th>
+                <th>Risk</th>
+                <th>Reason</th>
+                <th>Method</th>
+                <th>Url</th>
+                <th>PostData</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr  class='risk3'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>9874874452510297290</td>
+                <td>Index of /admin/</td>
+                <td>3</td>
+                <td>Critical Title</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/admin/">http://testphp.vulnweb.com/admin/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593845457148682</td>
+                <td>Home of Acunetix Art</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/">http://testphp.vulnweb.com/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk3'>
+                <td>0</td>
+                <td></td>
+                <td></td>
+                <td>0</td>
+                <td>0</td>
+                <td>navigation failed: net::ERR_ABORTED</td>
+                <td>3</td>
+                <td>Sensitive Suffix</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/admin/create.sql">http://testphp.vulnweb.com/admin/create.sql </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>14743317872836527746</td>
+                <td>ajax test</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/index.php">http://testphp.vulnweb.com/AJAX/index.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/artists.php">http://testphp.vulnweb.com/AJAX/artists.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infoartist.php?id=1">http://testphp.vulnweb.com/AJAX/infoartist.php?id=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infoartist.php?id=2">http://testphp.vulnweb.com/AJAX/infoartist.php?id=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infoartist.php?id=3">http://testphp.vulnweb.com/AJAX/infoartist.php?id=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/categories.php">http://testphp.vulnweb.com/AJAX/categories.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infocateg.php?id=1">http://testphp.vulnweb.com/AJAX/infocateg.php?id=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infocateg.php?id=2">http://testphp.vulnweb.com/AJAX/infocateg.php?id=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infocateg.php?id=3">http://testphp.vulnweb.com/AJAX/infocateg.php?id=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infocateg.php?id=4">http://testphp.vulnweb.com/AJAX/infocateg.php?id=4 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/titles.php">http://testphp.vulnweb.com/AJAX/titles.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/xml;charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/infotitle.php">http://testphp.vulnweb.com/AJAX/infotitle.php </a> </td>
+
+                <td>id=1</td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/AJAX/showxml.php">http://testphp.vulnweb.com/AJAX/showxml.php </a> </td>
+
+                <td><xml><node name="nodename1">nodetext1</node><node name="nodename2">nodetext2</node></xml></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/search.php?test=query">http://testphp.vulnweb.com/search.php?test=query </a> </td>
+
+                <td>searchFor=&goButton=go</td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593845457148682</td>
+                <td>Home of Acunetix Art</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/index.php">http://testphp.vulnweb.com/index.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637536423217912714</td>
+                <td>picture categories</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/categories.php">http://testphp.vulnweb.com/categories.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637536251419220746</td>
+                <td>artists</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/artists.php">http://testphp.vulnweb.com/artists.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535701596295938</td>
+                <td>disclaimer</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/disclaimer.php">http://testphp.vulnweb.com/disclaimer.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593845390037770</td>
+                <td>you cart</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/cart.php">http://testphp.vulnweb.com/cart.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535701663406858</td>
+                <td>guestbook</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/guestbook.php">http://testphp.vulnweb.com/guestbook.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709594017255838466</td>
+                <td>login page</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/login.php">http://testphp.vulnweb.com/login.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>11167444909597040150</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/">http://testphp.vulnweb.com/Mod_Rewrite_Shop/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>11013741449701658430</td>
+                <td>HTTP Parameter Pollution Example</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/hpp/">http://testphp.vulnweb.com/hpp/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593845457148682</td>
+                <td>Document titleg</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Templates/main_dynamic_template.dwt.php">http://testphp.vulnweb.com/Templates/main_dynamic_template.dwt.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>404</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/.php?id=">http://testphp.vulnweb.com/.php?id= </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>404</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/showxml.php">http://testphp.vulnweb.com/showxml.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>404</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/titles.php">http://testphp.vulnweb.com/titles.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593295634225922</td>
+                <td>artists</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/artists.php?artist=1">http://testphp.vulnweb.com/artists.php?artist=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=1">http://testphp.vulnweb.com/product.php?pic=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>601434371237795458</td>
+                <td>pictures</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/listproducts.php?cat=1">http://testphp.vulnweb.com/listproducts.php?cat=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=2">http://testphp.vulnweb.com/product.php?pic=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=3">http://testphp.vulnweb.com/product.php?pic=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=4">http://testphp.vulnweb.com/product.php?pic=4 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=5">http://testphp.vulnweb.com/product.php?pic=5 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593295634225922</td>
+                <td>artists</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/artists.php?artist=2">http://testphp.vulnweb.com/artists.php?artist=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=6">http://testphp.vulnweb.com/product.php?pic=6 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535701663404810</td>
+                <td>pictures</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/listproducts.php?cat=2">http://testphp.vulnweb.com/listproducts.php?cat=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637535735956034306</td>
+                <td>picture details</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/product.php?pic=7">http://testphp.vulnweb.com/product.php?pic=7 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593295701334786</td>
+                <td>pictures</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/listproducts.php?cat=3">http://testphp.vulnweb.com/listproducts.php?cat=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593295701334786</td>
+                <td>pictures</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/listproducts.php?cat=4">http://testphp.vulnweb.com/listproducts.php?cat=4 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709593295634225922</td>
+                <td>artists</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/artists.php?artist=3">http://testphp.vulnweb.com/artists.php?artist=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on artist</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?aid=1">http://testphp.vulnweb.com/comment.php?aid=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on artist</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?aid=2">http://testphp.vulnweb.com/comment.php?aid=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on artist</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?aid=3">http://testphp.vulnweb.com/comment.php?aid=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709574226046541586</td>
+                <td>signup</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/signup.php">http://testphp.vulnweb.com/signup.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709523646367193998</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/">http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/network-attached-storage-dlink/1/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709523646367193998</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/">http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/web-camera-a4tech/2/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>709523646367193998</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/">http://testphp.vulnweb.com/Mod_Rewrite_Shop/Details/color-printer/3/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>12454954903110324030</td>
+                <td>HTTP Parameter Pollution Example</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/hpp/?pp=12">http://testphp.vulnweb.com/hpp/?pp=12 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=Submit">http://testphp.vulnweb.com/hpp/params.php?aaaa%2F=Submit </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>601434371237795458</td>
+                <td>pictures</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/listproducts.php?artist=1">http://testphp.vulnweb.com/listproducts.php?artist=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on picture</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=5">http://testphp.vulnweb.com/comment.php?pid=5 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on picture</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=7">http://testphp.vulnweb.com/comment.php?pid=7 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on picture</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=2">http://testphp.vulnweb.com/comment.php?pid=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on picture</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=3">http://testphp.vulnweb.com/comment.php?pid=3 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=1">http://testphp.vulnweb.com/comment.php?pid=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=4">http://testphp.vulnweb.com/comment.php?pid=4 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16167607367529579793</td>
+                <td>comment on picture</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/comment.php?pid=6">http://testphp.vulnweb.com/comment.php?pid=6 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>18197036992653938856</td>
+                <td>add new user</td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/secured/newuser.php">http://testphp.vulnweb.com/secured/newuser.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5614774563166871270</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/">http://testphp.vulnweb.com/Mod_Rewrite_Shop/BuyProduct-1/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5614774563166871270</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html">http://testphp.vulnweb.com/Mod_Rewrite_Shop/RateProduct-1.html </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16844465356984910844</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12">http://testphp.vulnweb.com/hpp/params.php?p=valid&pp=12 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>404</td>
+                <td>text/html; charset=UTF-8</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://testphp.vulnweb.com/params.php?p=valid&amp;pp=12">http://testphp.vulnweb.com/params.php?p=valid&amp;pp=12 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+        </tbody>
+
+    </table>
+
+</div>
+
+<footer>
+    <p>Generated by Webx</p>
+</footer>
+
+</body>
+</html>
+
+

@@ -1,0 +1,760 @@
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Webx Report —— http://demo.aisec.cn/demo/aisec/ 爬虫报告</title>
+<h3>Webx Report —— http://demo.aisec.cn/demo/aisec/ 爬虫报告</h3>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+<style>
+  body { font-family: Arial, sans-serif; font-size: 1em;}
+   h3 { font-size: 1.3em; color: #333; margin-bottom: 2px; border-bottom: 2px solid #eee; padding-bottom: 2px; }
+
+   
+   .container {
+    display: flex;
+    justify-content: space-between;
+    }
+    .text-content {
+        flex: 1;
+        max-width: 50%; /* 限制最大宽度 */
+        overflow: auto; /* 添加滚动条 */
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .img-content {
+        flex: 1;
+        max-width: 50%; /* 限制最大宽度 */
+        text-align: center;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+    .img-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    <!--     
+    @media screen and (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .text-content, .img-content {
+            max-width: 100%;
+        }
+    } 
+    -->
+
+   .stats-row {  margin-bottom: 5px;  border-bottom: 1px solid #ddd; }
+   .stats-item { font-weight: bold; white-space: nowrap;  margin-right: 10px; }
+   .stats-result { color:#3c78d8;  font-weight: bold;  flex-grow: 1;}
+   .stats-result-alert { color:#e74c3c;;  font-weight: bold;  flex-grow: 1;}
+
+
+  .highlight { color: #e74c3c; }
+
+
+  table.dataTable { width: 100%; margin-top: 10px !important; }
+
+  
+
+</style>
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    $('.dataTable').DataTable({
+        "searching": true, // 启用搜索框
+        "paging": false, // 禁用分页，根据需要可以开启
+        "info": false, // 禁用信息显示，根据需要可以开启
+        "order": [[6, 'desc']]    // 根据风险等级排序
+    });
+});
+
+
+
+</script>
+</head>
+
+<body>
+<div class="container">
+    <div class="text-content">
+        <h3>任务信息</h3>
+
+        
+        <div class="stats-row">
+            <span class="stats-item">爬虫URL:</span>
+            <span class="stats-result"> <a target=_blank href="http://demo.aisec.cn/demo/aisec/">http://demo.aisec.cn/demo/aisec/</a></b>  &nbsp;&nbsp;&nbsp;&nbsp; [AISec漏洞扫描器测试平台]   </span> 
+        </div>
+
+        <!-- URL数量(Request|Response) -->
+        <div class="stats-row">
+            <span class="stats-item">URL数量[Request|Response]:</span>
+            <span class="stats-result">185 | 
+            25</span> 
+        </div>
+        
+        <!-- 域名数(同域|外域) -->
+        <div class="stats-row">
+            <span class="stats-item">域名数[同域（子域）|外域]:</span>
+            <span class="stats-result">10 [ 3 (0)  |  7   ] </span>
+        </div>
+        
+        
+        <!-- 并发和状态 -->
+        <div class="stats-row">
+            <span class="stats-item">并发:</span>
+            <span class="stats-result">2 [TaskDone]</span> 
+        </div>
+        
+        <!-- 扫描时间 -->
+        <div class="stats-row">
+            <span class="stats-item">扫描时间:</span>
+            <span class="stats-result">  1m46s   [ 2024-07-18 18:00:19 - 2024-07-18 18:02:05 ]   </span>
+        </div>
+        
+        <!-- 站点特征 -->
+        <div class="stats-row">
+            <span class="stats-item">站点特征:</span>
+            <span class="stats-result">
+            
+            </span>
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item">JS算法信息[0] ：</span>
+            
+            
+            
+        </div>
+        
+
+        
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">手机号码[0]</span>
+            
+        </div>
+        
+
+        
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">身份证信息[0]</span>
+            
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">邮箱地址[0]</span>
+            
+        </div>
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">JWT秘钥信息[0]</span> 
+            
+        </div>
+
+
+        
+
+
+        <div class="stats-row">
+            <span class="stats-item stats-result-alert">Secret秘钥信息[0]</span>
+            
+        </div>
+
+
+        
+
+
+        <div class="stats-row ip-address">
+            <span class="stats-item">IP地址[0]</span> 
+            
+        </div>
+
+
+        <div class="stats-row sub-domain">
+            <span class="stats-item">子域域名[0]:</span>
+            
+        </div>
+        
+
+       
+        <div class="stats-row same-domain">
+            <span class="stats-item">同域域名[3]</span>
+            
+                <button onclick="toggleShowMore('same-domain-list')" class="toggle-btn">展开</button>
+                
+                <span class="same-domain-list one" id="same-domain-list-one">
+                     
+                    
+                        
+                            
+                            <span class="stats-result">  info.aisec.cn ... </span>  
+                        
+                    
+                        
+                            
+                </span>
+                </span>
+                <div class="same-domain-list all" id="same-domain-list-all" style="display:none;">
+                    
+                    info.aisec.cn,
+                    
+                    www.aisec.cn,
+                    
+                    demo.aisec.cn,
+                    
+                </div>
+            
+        </div>
+        
+
+        
+        <div class="stats-row other-domain">
+            <span class="stats-item">外域域名[7]</span>
+            
+                <button onclick="toggleShowMore('other-domain-list')" class="toggle-btn">展开</button>
+                
+                <span class="other-domain-list one" id="other-domain-list-one">
+                     
+                    
+                        
+                            
+                            <span class="stats-result">  demo.testfire.net ... </span>  
+                        
+                    
+                        
+                            
+                </span>
+                <div class="other-domain-list all" id="other-domain-list-all" style="display:none;">
+                    
+                    demo.testfire.net,
+                    
+                    testphp.vulnweb.com,
+                    
+                    testasp.vulnweb.com,
+                    
+                    crackme.cenzic.com,
+                    
+                    zero.webappsecurity.com,
+                    
+                    gov.cn,
+                    
+                    testaspnet.vulnweb.com,
+                    
+                </div>
+            
+        </div>
+       
+
+
+    </div>
+
+
+    <div class="img-content">
+    <img src="img/demo.aisec.cn_2024-07-18.png"  alt="截图信息" class="screenshot">
+    </div>
+
+</div>
+
+
+
+<style>
+    .list.one {
+        display: block;
+        transition: opacity 0.3s ease-out;
+    }
+    .list.one.hidden {
+        opacity: 0;
+    }
+    .list.all {
+        display: none;
+    }
+    .toggle-btn, .copy-btn {
+        cursor: pointer;
+        padding: 5px 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+    }
+</style>
+
+<script>
+
+function toggleShowMore(listId) {
+    var oneElement = document.getElementById(listId + '-one');
+    var allElement = document.getElementById(listId + '-all');
+    var toggleBtn = document.querySelector('button[onclick*="' + listId + '"].toggle-btn');
+    
+    // Toggle the visibility of the one and all elements
+    if (allElement.style.display === 'none') {
+        oneElement.classList.add('hidden');
+        allElement.style.display = 'block';
+        toggleBtn.textContent = '收起';
+    } else {
+        oneElement.classList.remove('hidden');
+        allElement.style.display = 'none';
+        toggleBtn.textContent = '展开';
+    }
+}
+
+</script>
+
+
+
+
+<style>
+.risk0 { color: #000000; } /* 黑色 */
+.risk1 { color: #3498db; } /* 蓝色 */
+.risk2 { color: #e67e22; } /* 橙色 */
+.risk3 { color: #e74c3c; } /* 红色，不要太鲜艳 */
+</style>
+
+
+<div class="box1">
+    <h3>详细请求信息 URL [25] </h3>
+    <table class="dataTable">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>CType</th>
+                <th>RType</th>
+                <th>Length</th>
+                <th>Fingerprint</th>
+                <th>Title</th>
+                <th>Risk</th>
+                <th>Reason</th>
+                <th>Method</th>
+                <th>Url</th>
+                <th>PostData</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8871764514798437">http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8871764514798437 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk2'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637911030785531434</td>
+                <td>AISec漏洞扫描器测试平台</td>
+                <td>2</td>
+                <td>Suspicious Title</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/">http://demo.aisec.cn/demo/aisec/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8871764514798437">http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8871764514798437 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8847017192892315">http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.8847017192892315 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk2'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637911030785531434</td>
+                <td>AISec漏洞扫描器测试平台</td>
+                <td>2</td>
+                <td>Suspicious Title</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/index.php">http://demo.aisec.cn/demo/aisec/index.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>XHR</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.4412491920652959">http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=0.4412491920652959 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk2'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>637911030785531434</td>
+                <td>AISec漏洞扫描器测试平台</td>
+                <td>2</td>
+                <td>Suspicious Title</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/#">http://demo.aisec.cn/demo/aisec/# </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/html_link.php?id=2">http://demo.aisec.cn/demo/aisec/html_link.php?id=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/js_link.php?id=2&msg=abc">http://demo.aisec.cn/demo/aisec/js_link.php?id=2&msg=abc </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16855776584533378940</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/other/">http://demo.aisec.cn/demo/aisec/other/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>13339459236241251092</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/login2.php">http://demo.aisec.cn/demo/aisec/login2.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>0</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>POST</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/post_link.php">http://demo.aisec.cn/demo/aisec/post_link.php </a> </td>
+
+                <td>------WebKitFormBoundaryEojav797DzEBNG5v
+Content-Disposition: form-data; name="id"
+
+webx20221
+--</td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>16844465356984910844</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/cookie_link.php?id=1">http://demo.aisec.cn/demo/aisec/cookie_link.php?id=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk2'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5579611932579908866</td>
+                <td>漏洞扫描器测试平台</td>
+                <td>2</td>
+                <td>Suspicious Title</td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/">http://demo.aisec.cn/ </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/html_link.php?id=1">http://demo.aisec.cn/demo/aisec/html_link.php?id=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/js_link.php?id=1&amp;msg=abc">http://demo.aisec.cn/demo/aisec/js_link.php?id=1&amp;msg=abc </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/js_link.php?id=2&amp;msg=abc">http://demo.aisec.cn/demo/aisec/js_link.php?id=2&amp;msg=abc </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/js_link.php">http://demo.aisec.cn/demo/aisec/js_link.php </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/post_link.php?id=1&amp;msg=1">http://demo.aisec.cn/demo/aisec/post_link.php?id=1&amp;msg=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/click_link.php?id=1">http://demo.aisec.cn/demo/aisec/click_link.php?id=1 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t=">http://demo.aisec.cn/demo/aisec/ajax_link.php?id=1&t= </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/if_link.php?id=2">http://demo.aisec.cn/demo/aisec/if_link.php?id=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/ajax_link.php?">http://demo.aisec.cn/demo/aisec/ajax_link.php? </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>13339459236241251092</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/login2.php?">http://demo.aisec.cn/demo/aisec/login2.php? </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+            <tr  class='risk0'>
+                <td>200</td>
+                <td>text/html</td>
+                <td>Document</td>
+                <td>0</td>
+                <td>5249511610530305420</td>
+                <td></td>
+                <td>0</td>
+                <td></td>
+                <td>GET</td>
+                <td> <a target="_blank" href="http://demo.aisec.cn/demo/aisec/click_link.php?id=2">http://demo.aisec.cn/demo/aisec/click_link.php?id=2 </a> </td>
+
+                <td></td>
+            </tr>
+
+        
+        </tbody>
+
+    </table>
+
+</div>
+
+<footer>
+    <p>Generated by Webx</p>
+</footer>
+
+</body>
+</html>
+
+
